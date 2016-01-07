@@ -6,5 +6,6 @@ class Tool
   field :brand, type: String
   field :owner, type: Hash
   field :accessory, type: Hash
-  
+  field :isAccessory, type: Boolean
+
 end

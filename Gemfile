@@ -15,9 +15,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'foundation-rails'
-gem 'gibbon'
-gem 'high_voltage'
 gem 'simple_form'
 gem 'mongoid'
 gem 'sqlite3'
