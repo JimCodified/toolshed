@@ -21,11 +21,6 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'mongoid'
 gem 'sqlite3'
-group :development do
-  gem 'better_errors'
-  gem 'quiet_assets'
-  gem 'rails_layout'
-end
-group :production do
-#  gem 'rails_12factor'
-end
+gem 'better_errors'
+gem 'quiet_assets'
+gem 'rails_layout'

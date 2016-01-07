@@ -1,0 +1,36 @@
+<div class="jumbotron">
+  <h1>Welcome to the Shed</h1>
+</div>
+
+<table class="table table-hover table-condensed">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Kind</th>
+    <th>Brand</th>
+    <th>Owner</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @tools.each do |tool| %>
+    <tr class="info">
+      <td><%= tool.name %></td>
+      <td><%= tool.kind %></td>
+      <td><%= tool.brand %></td>
+      <td><%= tool.owner[:f_name] %></td>
+    </tr>
+    <% unless tool.accessory.nil? %>
+      <tr>
+        <td></td>
+        <td><b>Accessory</b></td>
+        <td><%= tool.accessory[:kind]%></td>
+        <td><%= tool.accessory[:brand] %></td>
+        <td><%= tool.accessory[:name] %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</tbody>
+</table>
+
+<br>
