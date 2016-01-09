@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "The Toolshed" %></title>
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Toolshed" %>">
-
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Toolshed" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Toolshed" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+  </body>
 </html>
