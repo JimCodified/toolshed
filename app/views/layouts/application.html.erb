@@ -8,11 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
+  <body style="padding-top:70px">
+   <%= render 'layouts/navigation' %>
+
        <%= render 'layouts/messages' %>
        <div class="container">
           <% flash.each do |key, value| %>
@@ -29,6 +27,6 @@
          <%= yield %>
       </div>
 
-    </main>
+
   </body>
 </html>
