@@ -5,7 +5,7 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    @tools = Tool.where(owner_id: current_user._id)
   end
 
 end

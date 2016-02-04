@@ -7,50 +7,55 @@
   </div>
 <% end %>
 
+<% @tools.each do |tool| %>
+  <% unless tool.has_parent_tool? %> <!-- check to see if this is an accessory of another tool -->
+  <div class="container panel panel-default">
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Kind</th>
-    <th>Brand</th>
-    <th>Owner</th>
-  </tr>
-</thead>
-
-<tbody>
-  <% @tools.each do |tool| %>
-    <% unless tool.isAccessory %>
-
-      <tr class="info">
-        <% if tool.accessory.nil? %>
-          <td><%= tool.name %></td>
-        <% else %>
-          <td>
-            <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list"><%= tool.name %></a>
-          </td>
-        <% end %>
-        <td><%= tool.kind %></td>
-        <td><%= tool.brand %></td>
-        <td><%= tool.owner[:f_name] %></td>
-      </tr>
-
-      <% unless tool.accessory.nil? %>
-          <tr class="collapse" id="<%=tool._id%>accessory_list">
-            <td colspan="3">
-              <p>Accessories:</p>
-              <p><%= tool.accessory[:kind]%> : <%= tool.accessory[:brand] %> : <%= tool.accessory[:name] %>
-            </td>
-          </tr>
-          <tr class="collapse" id="<%=tool._id%>accessory_list">
-            <td><%= tool.accessory[:kind]%></td>
-            <td><%= tool.accessory[:brand] %></td>
-            <td><%= tool.accessory[:name] %></td>
-          </tr>
-      <% end %>
+    <div class="row panel">
+      <div class="col-md-2"><p class="text-info"><strong><%= tool.brand %></strong></p></div>
+      <div class="col-md-2"><p class="text-muted"><%= tool.kind %></p></div>
+      <div class="col-md-2"><p class="text-muted">Model #: <%= tool.model %></p></div>
+    </div>
+    <% if tool.nickname? %>
+    <div class="row">
+      <div class="col-md-6"><h4><%= tool.nickname %></h4></div>
+    </div>
     <% end %>
-  <% end %>
-</tbody>
-</table>
+    <div class="row">
+      <div class="col-md-6"><h4><%= tool.description %></h4></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6"><% if tool.pic? %><img src="<%=tool.pic%>" class="img-responsive" alt="Tool image"><%end%></div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6"><%= tool.borrower.name if tool.has_borrower?  %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Purchase Location: <%=tool.purchase_location%></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Purchase Date:<%= tool.purchase_date %></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">Notes:</div>
+      <div class="col-md-8 panel panel-default"><%= tool.notes %></div>
+    </div>
 
-<br>
+    <% if tool.has_accessories? %>
+      <div class="panel-group" id="accordion" aria-multiselectable="true">
+        <h5>
+          <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list">Show Accessories</a>
+        </h5>
+        <div class="panel-collapse collapse" role="tabpanel" id="<%=tool._id%>accessory_list">
+          <div class="panel panel-default">
+            <p><%= tool.accessories[0].description %> : <%= tool.accessories[0].brand %> : <%= tool.accessories[0].kind %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+  <% end %>
+<% end %>
