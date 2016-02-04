@@ -42,6 +42,9 @@ class User
   field :uid, type: String
   field :provider, type: String
 
+  has_many :tools, dependent: :delete, inverse_of: :owner
+  has_many :borrowed_tools, class_name: "tool", inverse_of: :borrower
+
   def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
        user.email = auth.info.email
