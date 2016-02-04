@@ -11,8 +11,9 @@ class Tool
   field :purchase_location, type: String  # where'd you get it
   field :notes, type: String              # freeform notes field ('needs new blade', etc)
 
-  belongs_to :owner, class_name: "user", inverse_of: :tools
-  belongs_to :borrower, class_name: "user", inverse_of: :borrowed_tools
-  recursively_embeds_many                 # accessories are tools that belong to this parent tools
+  belongs_to :owner, class_name: "User", inverse_of: :tools
+  belongs_to :borrower, class_name: "User", inverse_of: :borrowed_tools
+  has_many :accessories, class_name: "Tool"      # accessories are tools that belong to this parent tool
+  belongs_to :parent_tool, class_name: "Tool"
 
 end

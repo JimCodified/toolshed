@@ -28,9 +28,45 @@
 # belongs_to :borrower, class: "user"
 # :borrower_id
 # recursively_embeds_many                 # accessories are tools that belong to this parent tools
+require 'date'
 
-user1 = User.find({"email":"buck.i.jim@gmail.com"})
-user2 = User.find({"email":"jim.a73@gmail.com"})
+user1 = User.create(
+	email: "buck.i.jim@gmail.com",
+#	encrypted_password: "$2a$10$vibmPbki3lXB61l4UyOL6OzNTXjFGyoAxe11X.YyAdhEKdbGbp7O2",
+#  encrypted_password: "",
+	sign_in_count: 2,
+	failed_attempts: 2,
+	name: "Jim",
+	confirmation_token: "xwd9kGsrAyxSvQgJpi5v",
+	confirmation_sent_at: DateTime.parse("2016-01-27T07:27:24.230Z"),
+	confirmed_at: DateTime.parse("2016-01-27T07:36:54.317Z"),
+	last_sign_in_at: DateTime.parse("2016-01-27T07:37:05.742Z"),
+	current_sign_in_at: DateTime.parse("2016-01-29T01:33:52.949Z"),
+	last_sign_in_ip: "::1",
+	current_sign_in_ip: "::1"
+)
+user1.save
+
+user2 = User.create(
+	email: "jim.a73@gmail.com",
+#	encrypted_password: "$2a$10$nC.kvzjxKbpHv7YcWs9jP.K/E3RA0LGNYgT.G2WTAdPoX4FyocUeW",
+#  encrypted_password: "",
+	sign_in_count: 6,
+	failed_attempts: 0,
+	provider: "facebook",
+	uid: "10208891333140034",
+	name: "Jim Armstrong",
+	confirmation_token: "x4W6qUosky_ivs2wWcGD",
+	confirmation_sent_at: DateTime.parse("2016-01-29T02:13:13.737Z"),
+	confirmed_at: DateTime.parse("2016-01-29T02:14:53.389Z"),
+	last_sign_in_at: DateTime.parse("2016-01-29T02:43:14.843Z"),
+	current_sign_in_at: DateTime.parse("2016-02-04T01:17:21.995Z"),
+	last_sign_in_ip: "::1",
+	current_sign_in_ip: "::1",
+	reset_password_token: "d55db8a366bc440ee0ba7d46282146f72161e3b28cb58c6201a07e1c678d37b7",
+	reset_password_sent_at: DateTime.parse("2016-02-04T01:13:21.943Z")
+)
+user2.save
 
 t1 = Tool.create(
       brand: "Bosch",
@@ -57,6 +93,6 @@ acc1 = Tool.create(
       kind: "Stand/Table",
       description: "Heavy Duty Miter Saw Stand",
       model: "DWX723",
+      parent_tool_id: t2._id,
       owner_id: user2._id
 )
-t2.child_tool = acc1
