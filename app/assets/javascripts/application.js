@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
-//= require bootstrap/dropdown
-//= require bootstrap-sprockets
+//= require modernizr
 //= require_tree .
+
+
+$(function(){ $(document).foundation(); });
