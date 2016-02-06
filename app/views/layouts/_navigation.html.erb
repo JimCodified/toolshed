@@ -1,37 +1,34 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><%= link_to 'The Toolshed', root_path %></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+<div class="top-bar">
+   <div class="top-bar-title">
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+         <span class="menu-icon dark" data-toggle></span>
+      </span>
+      <h3>The Toolshed</h3>
+   </div>
+   <div id="responsive-menu">
+      <div class="top-bar-left">
+      </div>
 
-  <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <div class="top-bar-right">
+         <ul class="dropdown menu" data-dropdown-menu>
+            <% if user_signed_in? %>
+               <li><a href="#"><%= current_user.name %></a>
+                  <ul class="menu vertical">
+                     <li><%= link_to 'Profile', edit_user_registration_path %></li>
+                     <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+                  </ul>
+               </li>
+            <% else %>
+               <li><a href="#">Sign Up / Log In</a>
+                  <ul class="menu vertical">
+                     <li><%= link_to 'Log In', new_user_session_path %></li>
+                     <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                  </ul>
+               </li>
+           <% end %>
+         </ul>
+      </div>
+   </div>
 
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="has-dropdown">
-      <% if user_signed_in? %>
-        <a href="#"><%= current_user.name %></a>
-        <ul class="dropdown">
-          <li><%= link_to 'Profile', edit_user_registration_path %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-        </ul>
-      <% else %>
-      <a href="#">Sign Up / Log In</a>
-        <ul class="dropdown">
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        </ul>
-      <% end %>
-      </li>
-    </ul>
-
-    <!-- Left Nav Section -->
-    <!-- add nav icons here -->
-    <ul class="left">
-    </ul>
-
-  </section>
-</nav>
+</div>
