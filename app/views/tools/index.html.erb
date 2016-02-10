@@ -8,7 +8,7 @@
   <% unless tool.has_parent_tool? %> <!-- check to see if this is an accessory of another tool -->
 
     <div class="column">
-      <ul class="pricing-table">
+      <ul class="toolcard">
         <li class="title" data-equalizer-watch><%= tool.description %></li>
         <% if tool.nickname? %>
           <li class="price"><%= tool.nickname %></li>

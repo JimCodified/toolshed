@@ -24,100 +24,100 @@ $jet         : #222222;
 // -----------------------------------------
 // Pricing tables are back! Using these for tool display
 // We use this to control the border color
-$price-table-border: solid 1px $gainsboro;
+$toolcard-table-border: solid 1px $gainsboro;
 
 // We use this to control the bottom margin of the pricing table
-$price-table-margin-bottom: rem-calc(20);
+$toolcard-table-margin-bottom: rem-calc(20);
 
 // We use these to control the title styles
-$price-title-bg: $oil;
-$price-title-padding: rem-calc(15 20);
-$price-title-align: center;
-$price-title-color: $smoke;
-//$price-title-weight: $font-weight-normal;
-$price-title-size: rem-calc(16);
-$price-title-font-family: $body-font-family;
+$toolcard-title-bg: $oil;
+$toolcard-title-padding: rem-calc(15 20);
+$toolcard-title-align: center;
+$toolcard-title-color: $smoke;
+//$toolcard-title-weight: $font-weight-normal;
+$toolcard-title-size: rem-calc(16);
+$toolcard-title-font-family: $body-font-family;
 
-// We use these to control the price styles
-$price-money-bg: $vapor;
-$price-money-padding: rem-calc(15 20);
-$price-money-align: center;
-$price-money-color: $oil;
-//$price-money-weight: $font-weight-normal;
-$price-money-size: rem-calc(32);
-$price-money-font-family: $body-font-family;
+// We use these to control the toolcard styles
+$toolcard-money-bg: $vapor;
+$toolcard-money-padding: rem-calc(15 20);
+$toolcard-money-align: center;
+$toolcard-money-color: $oil;
+//$toolcard-money-weight: $font-weight-normal;
+$toolcard-money-size: rem-calc(32);
+$toolcard-money-font-family: $body-font-family;
 
 
 // We use these to control the description styles
-$price-bg: $white;
-$price-desc-color: $monsoon;
-$price-desc-padding: rem-calc(15);
-$price-desc-align: center;
-$price-desc-font-size: rem-calc(12);
-//$price-desc-weight: $font-weight-normal;
-$price-desc-line-height: 1.4;
-$price-desc-bottom-border: dotted 1px $gainsboro;
+$toolcard-bg: $white;
+$toolcard-desc-color: $monsoon;
+$toolcard-desc-padding: rem-calc(15);
+$toolcard-desc-align: center;
+$toolcard-desc-font-size: rem-calc(12);
+//$toolcard-desc-weight: $font-weight-normal;
+$toolcard-desc-line-height: 1.4;
+$toolcard-desc-bottom-border: dotted 1px $gainsboro;
 
 // We use these to control the list item styles
-$price-item-bg: $white;
-$price-item-color: $oil;
-$price-item-padding: rem-calc(15);
-$price-item-align: left;
-$price-item-font-size: rem-calc(14);
-//$price-item-weight: $font-weight-normal;
-$price-item-bottom-border: dotted 1px $gainsboro;
+$toolcard-item-bg: $white;
+$toolcard-item-color: $oil;
+$toolcard-item-padding: rem-calc(15);
+$toolcard-item-align: left;
+$toolcard-item-font-size: rem-calc(14);
+//$toolcard-item-weight: $font-weight-normal;
+$toolcard-item-bottom-border: dotted 1px $gainsboro;
 
 // We use these to control the CTA area styles
-$price-cta-bg: $white;
-$price-cta-align: center;
-$price-cta-padding: rem-calc(20 20 0);
+$toolcard-cta-bg: $white;
+$toolcard-cta-align: center;
+$toolcard-cta-padding: rem-calc(20 20 0);
 // -----------------------------------------
 
 
 
 
-/* Pricing Tables */
-.pricing-table {
-  border: $price-table-border;
+/* Toolcards, FKA Pricing Tables in fnd5 */
+.toolcard {
+  border: $toolcard-table-border;
   margin-left: 0;
-  margin-bottom: $price-table-margin-bottom; }
-  .pricing-table * {
+  margin-bottom: $toolcard-table-margin-bottom; }
+  .toolcard * {
     list-style: none;
     line-height: 1; }
-  .pricing-table .title {
-    background-color: $price-title-bg;
-    color: $price-title-color;
-    font-family: $price-title-font-family;
-    font-size: $price-title-size;
+  .toolcard .title {
+    background-color: $toolcard-title-bg;
+    color: $toolcard-title-color;
+    font-family: $toolcard-title-font-family;
+    font-size: $toolcard-title-size;
     font-weight: normal;
-    padding: $price-title-padding;
-    text-align: $price-title-align; }
-  .pricing-table .price {
-    background-color: $price-money-bg;
-    color: $price-money-color;
-    font-family: $price-money-font-family;
-    font-size: $price-money-size;
+    padding: $toolcard-title-padding;
+    text-align: $toolcard-title-align; }
+  .toolcard .price {
+    background-color: $toolcard-money-bg;
+    color: $toolcard-money-color;
+    font-family: $toolcard-money-font-family;
+    font-size: $toolcard-money-size;
     font-weight: normal;
-    padding: $price-money-padding;
-    text-align: $price-money-align; }
-  .pricing-table .description {
-    background-color: $price-bg;
-    border-bottom: $price-desc-bottom-border;
-    color: $price-desc-color;
-    font-size: $price-desc-font-size;
+    padding: $toolcard-money-padding;
+    text-align: $toolcard-money-align; }
+  .toolcard .description {
+    background-color: $toolcard-bg;
+    border-bottom: $toolcard-desc-bottom-border;
+    color: $toolcard-desc-color;
+    font-size: $toolcard-desc-font-size;
     font-weight: normal;;
-    line-height: $price-desc-line-height;
-    padding: $price-desc-padding;
-    text-align: $price-desc-align; }
-  .pricing-table .bullet-item {
-    background-color: $price-item-bg;
-    border-bottom: $price-item-bottom-border;
-    color: $price-item-color;
-    font-size: $price-item-font-size;
+    line-height: $toolcard-desc-line-height;
+    padding: $toolcard-desc-padding;
+    text-align: $toolcard-desc-align; }
+  .toolcard .bullet-item {
+    background-color: $toolcard-item-bg;
+    border-bottom: $toolcard-item-bottom-border;
+    color: $toolcard-item-color;
+    font-size: $toolcard-item-font-size;
     font-weight: normal;
-    padding: $price-item-padding;
-    text-align: $price-item-align; }
-  .pricing-table .cta-button {
-    background-color: $price-cta-bg;
-    padding: $price-cta-padding;
-    text-align: $price-cta-align; }
+    padding: $toolcard-item-padding;
+    text-align: $toolcard-item-align; }
+  .toolcard .cta-button {
+    background-color: $toolcard-cta-bg;
+    padding: $toolcard-cta-padding;
+    text-align: $toolcard-cta-align; }

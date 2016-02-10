@@ -18,3 +18,4 @@
 
 # ignore custom dev launch scripts
 /mongod-tools
+db/seed.js
