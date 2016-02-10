@@ -1,12 +1,28 @@
 use tools
 
+// these is an dummy user docs BUT
+//
+//NON-FUNCTIONING
+//
+// You'll need to change these to get them to
+// work. to do this, do the following:
+//   0. you can run the app, register new users from scratch (email or FB), and then copy their details to these records to seed the DB whenever you want to reset
+//
+// OR
+//
+//   0. Use the records below with some edits:
+//   1. change the emails below to something you control
+//   2. Make sure devise.rb and development.rb are configured to send emails
+//   3. Reset the passwords of these users - the encrypted_password here is a dummy so you will have to go through the forgot password link
+//   4. You can also fiddle with devise settings directly if you want to do something different with users
+//
 u0 = db.users.insertOne( {
-	'email': "buck.i.jim@gmail.com",
-	'encrypted_password': "$2a$10$7WbxUEFspw/ayNX32fwhfeM5TaH1COmAwMXGjquvY089ICSggqmy.",
+	'email': "user0@gmail.com",
+	'encrypted_password': "$2a107WbxyNX32fwhfeM5TaH1COmAwMXGjquvY089ICSggqmy",
 	'sign_in_count': 2,
 	'failed_attempts': 2,
 	'name': "Jim",
-	'confirmation_token': "xwd9kGsrAyxSvQgJpi5v",
+	'confirmation_token': "xwd9kGsrAyxSvQgJv",
 	'confirmation_sent_at': ISODate("2016-01-27T07:27:24.230Z"),
 	'confirmed_at': ISODate("2016-01-27T07:36:54.317Z"),
 	'last_sign_in_at': ISODate("2016-01-27T07:37:05.742Z"),
@@ -16,22 +32,20 @@ u0 = db.users.insertOne( {
 } )
 
 u1 = db.users.insertOne( {
-	'email': "jim.a73@gmail.com",
-	'encrypted_password': "$2a$10$nC.kvzjxKbpHv7YcWs9jP.K/E3RA0LGNYgT.G2WTAdPoX4FyocUeW",
+	'email': "user1@gmail.com",
+	'encrypted_password': "$2a$10$nC.kvzjxKb/E3RA0LGNYgT.G2WTAdPoX4FyocUeW",
 	'sign_in_count': 6,
 	'failed_attempts': 0,
 	'provider': "facebook",
-	'uid': "10208891333140034",
+	'uid': "1020",
 	'name': "Jim Armstrong",
-	'confirmation_token': "x4W6qUosky_ivs2wWcGD",
+	'confirmation_token': "x4W6",
 	'confirmation_sent_at': ISODate("2016-01-29T02:13:13.737Z"),
 	'confirmed_at': ISODate("2016-01-29T02:14:53.389Z"),
 	'last_sign_in_at': ISODate("2016-01-29T02:43:14.843Z"),
 	'current_sign_in_at': ISODate("2016-02-04T01:17:21.995Z"),
 	'last_sign_in_ip': "::1",
 	'current_sign_in_ip': "::1",
-	'reset_password_token': "d55db8a366bc440ee0ba7d46282146f72161e3b28cb58c6201a07e1c678d37b7",
-	'reset_password_sent_at': ISODate("2016-02-04T01:13:21.943Z")
 } )
 
 
