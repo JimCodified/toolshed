@@ -1,0 +1,123 @@
+// 100. Stuff I added - jda
+// ---------
+// colors added back from foundation 5
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+
+
+
+// -----------------------------------------
+// Pricing tables are back! Using these for tool display
+// We use this to control the border color
+$price-table-border: solid 1px $gainsboro;
+
+// We use this to control the bottom margin of the pricing table
+$price-table-margin-bottom: rem-calc(20);
+
+// We use these to control the title styles
+$price-title-bg: $oil;
+$price-title-padding: rem-calc(15 20);
+$price-title-align: center;
+$price-title-color: $smoke;
+//$price-title-weight: $font-weight-normal;
+$price-title-size: rem-calc(16);
+$price-title-font-family: $body-font-family;
+
+// We use these to control the price styles
+$price-money-bg: $vapor;
+$price-money-padding: rem-calc(15 20);
+$price-money-align: center;
+$price-money-color: $oil;
+//$price-money-weight: $font-weight-normal;
+$price-money-size: rem-calc(32);
+$price-money-font-family: $body-font-family;
+
+
+// We use these to control the description styles
+$price-bg: $white;
+$price-desc-color: $monsoon;
+$price-desc-padding: rem-calc(15);
+$price-desc-align: center;
+$price-desc-font-size: rem-calc(12);
+//$price-desc-weight: $font-weight-normal;
+$price-desc-line-height: 1.4;
+$price-desc-bottom-border: dotted 1px $gainsboro;
+
+// We use these to control the list item styles
+$price-item-bg: $white;
+$price-item-color: $oil;
+$price-item-padding: rem-calc(15);
+$price-item-align: left;
+$price-item-font-size: rem-calc(14);
+//$price-item-weight: $font-weight-normal;
+$price-item-bottom-border: dotted 1px $gainsboro;
+
+// We use these to control the CTA area styles
+$price-cta-bg: $white;
+$price-cta-align: center;
+$price-cta-padding: rem-calc(20 20 0);
+// -----------------------------------------
+
+
+
+
+/* Pricing Tables */
+.pricing-table {
+  border: $price-table-border;
+  margin-left: 0;
+  margin-bottom: $price-table-margin-bottom; }
+  .pricing-table * {
+    list-style: none;
+    line-height: 1; }
+  .pricing-table .title {
+    background-color: $price-title-bg;
+    color: $price-title-color;
+    font-family: $price-title-font-family;
+    font-size: $price-title-size;
+    font-weight: normal;
+    padding: $price-title-padding;
+    text-align: $price-title-align; }
+  .pricing-table .price {
+    background-color: $price-money-bg;
+    color: $price-money-color;
+    font-family: $price-money-font-family;
+    font-size: $price-money-size;
+    font-weight: normal;
+    padding: $price-money-padding;
+    text-align: $price-money-align; }
+  .pricing-table .description {
+    background-color: $price-bg;
+    border-bottom: $price-desc-bottom-border;
+    color: $price-desc-color;
+    font-size: $price-desc-font-size;
+    font-weight: normal;;
+    line-height: $price-desc-line-height;
+    padding: $price-desc-padding;
+    text-align: $price-desc-align; }
+  .pricing-table .bullet-item {
+    background-color: $price-item-bg;
+    border-bottom: $price-item-bottom-border;
+    color: $price-item-color;
+    font-size: $price-item-font-size;
+    font-weight: normal;
+    padding: $price-item-padding;
+    text-align: $price-item-align; }
+  .pricing-table .cta-button {
+    background-color: $price-cta-bg;
+    padding: $price-cta-padding;
+    text-align: $price-cta-align; }

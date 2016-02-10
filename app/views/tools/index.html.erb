@@ -3,57 +3,42 @@
       <h1><strong>Your tools, master!</strong></h1>
 <% end %>
 
-<div class="row small-up-1 medium-up-2 large-up-4">
+<div class="row small-up-1 medium-up-2 large-up-4" data-equalizer>
 <% @tools.each do |tool| %>
   <% unless tool.has_parent_tool? %> <!-- check to see if this is an accessory of another tool -->
 
     <div class="column">
-      <ul class="pricing table">
-        <li class="description"><%= tool.kind %></li>
-        <li class="title"><%= tool.description %></li>
-        <li class="description"><%= tool.brand %> / Model #: <%= tool.model %></li>
-
-    </div>
-    <% if tool.nickname? %>
-    <div class="row">
-      <div class="col-md-6"><h4><%= tool.nickname %></h4></div>
+      <ul class="pricing-table">
+        <li class="title" data-equalizer-watch><%= tool.description %></li>
+        <% if tool.nickname? %>
+          <li class="price"><%= tool.nickname %></li>
+        <% end %>
+        <li class="description"><span style="text-transform: capitalize;"><%= tool.brand %></span>  |  <%= tool.kind %>  |  Model #: <%= tool.model %></li>
+        <li class="bullet-item"><% if tool.pic? %><img src="<%=tool.pic%>" class="thumbnail" alt="Picture of <%=tool.description%>"><%end%></li>
+        <div class="bullet-item"><%= tool.borrower.name if tool.has_borrower?  %></div>
+        <div class="bullet-item">Purchase Location: <%=tool.purchase_location%></div>
+        <div class="bullet-item">Purchase Date:<%= tool.purchase_date %></div>
+        <div class="bullet-item">Notes:</div>
+        <div class="bullet-item"><%= tool.notes %></div>
     </div>
     <% end %>
-    <div class="row">
-      <div class="col-md-6"><h4><%= tool.description %></h4></div>
-    </div>
-    <div class="row">
-      <div class="col-md-6"><% if tool.pic? %><img src="<%=tool.pic%>" class="img-responsive" alt="Tool image"><%end%></div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-6"><%= tool.borrower.name if tool.has_borrower?  %></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">Purchase Location: <%=tool.purchase_location%></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">Purchase Date:<%= tool.purchase_date %></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-1">Notes:</div>
-      <div class="col-md-8 panel panel-default"><%= tool.notes %></div>
-    </div>
+  <% end %>
+</div>
 
-    <% if tool.has_accessories? %>
+<!--
+//    <% if tool.has_accessories? %>
       <div class="panel-group" id="accordion" aria-multiselectable="true">
         <h5>
-          <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list">Show Accessories</a>
+//          <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list">Show Accessories</a>
         </h5>
-        <div class="panel-collapse collapse" role="tabpanel" id="<%=tool._id%>accessory_list">
+//        <div class="panel-collapse collapse" role="tabpanel" id="<%=tool._id%>accessory_list">
           <div class="panel panel-default">
-            <p><%= tool.accessories[0].description %> : <%= tool.accessories[0].brand %> : <%= tool.accessories[0].kind %>
+//            <p><%= tool.accessories[0].description %> : <%= tool.accessories[0].brand %> : <%= tool.accessories[0].kind %>
           </div>
         </div>
       </div>
-    <% end %>
+//    <% end %>
 
-  <% end %>
-<% end %>
-</div>
+//  <% end %>
+
+-->

@@ -3,6 +3,9 @@
 @import 'settings';
 @import 'foundation';
 
+// my own stuff which relies on some foundation 6 stuff
+@import "custom_fnd5";
+
 // If you'd like to include motion-ui, you need to install the motion-ui sass package.
 //
 //@import 'motion-ui/motion-ui';

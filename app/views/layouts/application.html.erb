@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag    "application", 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -19,10 +18,9 @@
 
     <%= yield :top_content %>
 
-     <div class="hero">
-        <h1><%= yield :header %></h1>
-        <%= yield %>
-     </div>
+    <h1><%= yield :header %></h1>
+
+    <%= yield %>
 
   </body>
 </html>
