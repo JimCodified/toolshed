@@ -1,5 +1,11 @@
-// 100. Stuff I added - jda
+
+
+// Stuff I added - jda
 // ---------
+
+@import 'foundation-icons';
+@import 'webicons';
+
 // colors added back from foundation 5
 $ghost       : #FAFAFA;
 $snow        : #F9F9F9;
@@ -163,8 +169,22 @@ $toolcard-cta-padding: rem-calc(20 20 0);
       line-height: 1.1rem; }
 
 
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$google-color: #d50f25;
+$text-transform: uppercase;
+$icon-size: 2rem;
 
+.fb-button{
+  font-family: "foundation-icons";
+  background: $facebook-color;
+  color: $white;
+  font-size: $icon-size;
+  padding: .25em .4em;
+  radius: 50%;
+}
 
+/*
     .callout-card {
       background: white;
       border: 1px solid #333;
@@ -202,3 +222,4 @@ $toolcard-cta-padding: rem-calc(20 20 0);
           border-color: rgba(255, 255, 255, 0) #f89406 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
       .callout-card .callout-card-content {
         padding: 0.5rem 1.5rem 0.875rem; }
+*/

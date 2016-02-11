@@ -22,9 +22,6 @@
         <li class="description"><span style="text-transform: uppercase;"><%= tool.brand %></span>  ::  Model #: <%= tool.model %></li>
         <li class="bullet-item"><% if tool.pic? %><img src="<%=tool.pic%>" class="thumbnail" alt="Picture of <%=tool.description%>"><%end%></li>
         <li class="bullet-item"><%= tool.borrower.name if tool.has_borrower?  %></li>
-        <li class="bullet-item">Purchase Location: <%=tool.purchase_location%></li>
-        <li class="bullet-item">Purchase Date:<%= tool.purchase_date %></li>
-        <li class="bullet-item"><strong>Notes:</strong><br><%= tool.notes %></li>
       </ul>
     </div>
     <% end %>
@@ -48,9 +45,6 @@
             <li class="description"><span style="text-transform: uppercase;"><%= accessory.brand %></span>  ::  Model #: <%= accessory.model %></li>
             <li class="bullet-item"><% if accessory.pic? %><img src="<%=accessory.pic%>" class="thumbnail" alt="Picture of <%=accessory.description%>"><%end%></li>
             <li class="bullet-item"><%= accessory.borrower.name if accessory.has_borrower?  %></li>
-            <li class="bullet-item">Purchase Location: <%=accessory.purchase_location%></li>
-            <li class="bullet-item">Purchase Date:<%= accessory.purchase_date %></li>
-            <li class="bullet-item"><strong>Notes:</strong><br><%= accessory.notes %></li>
           </ul>
         </div>
       <% end %>
