@@ -80,7 +80,8 @@ $toolcard-cta-padding: rem-calc(20 20 0);
 .toolcard {
   border: $toolcard-table-border;
   margin-left: 0;
-  margin-bottom: $toolcard-table-margin-bottom; }
+  margin-bottom: $toolcard-table-margin-bottom;
+ }
   .toolcard * {
     list-style: none;
     line-height: 1; }
@@ -121,3 +122,83 @@ $toolcard-cta-padding: rem-calc(20 20 0);
     background-color: $toolcard-cta-bg;
     padding: $toolcard-cta-padding;
     text-align: $toolcard-cta-align; }
+// these bits are adapted from the "callout card" building blocks at
+// http://zurb.com/building-blocks/info-card-with-corner-lables
+.toolcard.radius {
+  border-radius: 0.6rem; }
+.toolcard .card-label {
+    border-color: transparent #333 transparent transparent;
+    border-color: rgba(255, 255, 255, 0) #333333 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+    border-style: solid;
+    border-width: 0 70px 40px 0;
+    float: right;
+    height: 0px;
+    width: 0px;
+    transform: rotate(360deg); }
+.toolcard .label-text {
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      position: relative;
+      right: -40px;
+      top: 2px;
+      white-space: nowrap;
+      transform: rotate(30deg); }
+
+.toolcard .sign {
+      background: #fff;
+      width: 150px;
+      height: 1.2rem;
+      border: 2px solid #444;
+      position: relative;
+      top: -.6rem;
+      margin: auto; }
+.toolcard .sign h1 {
+      text-transform: uppercase;
+      font: bolder 0.875rem;
+      letter-spacing: 3px;
+      color: #666;
+      font-size: 70%;
+      text-align: center;
+      line-height: 1.1rem; }
+
+
+
+
+    .callout-card {
+      background: white;
+      border: 1px solid #333;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      margin: 1rem 0;}
+      .callout-card.primary {
+        border-color: #446cb3; }
+        .callout-card.primary .card-label {
+          border-color: transparent #446cb3 transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #446cb3 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card.secondary {
+        border-color: #adb2bd; }
+        .callout-card.secondary .card-label {
+          border-color: transparent #adb2bd transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #adb2bd rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card.info {
+        border-color: #89c4f4; }
+        .callout-card.info .card-label {
+          border-color: transparent #89c4f4 transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #89c4f4 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card.alert {
+        border-color: #f22613; }
+        .callout-card.alert .card-label {
+          border-color: transparent #f22613 transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #f22613 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card.success {
+        border-color: #87d37c; }
+        .callout-card.success .card-label {
+          border-color: transparent #87d37c transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #87d37c rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card.warning {
+        border-color: #f89406; }
+        .callout-card.warning .card-label {
+          border-color: transparent #f89406 transparent transparent;
+          border-color: rgba(255, 255, 255, 0) #f89406 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); }
+      .callout-card .callout-card-content {
+        padding: 0.5rem 1.5rem 0.875rem; }

@@ -1,0 +1,15 @@
+
+    <% if tool.has_accessories? %>
+      <div class="panel-group" id="accordion" aria-multiselectable="true">
+        <h5>
+          <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list">Show Accessories</a>
+        </h5>
+        <div class="panel-collapse collapse" role="tabpanel" id="<%=tool._id%>accessory_list">
+          <div class="panel panel-default">
+            <p><%= tool.accessories[0].description %> : <%= tool.accessories[0].brand %> : <%= tool.accessories[0].kind %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>

@@ -2,43 +2,59 @@
 <% content_for :top_content do %>
       <h1><strong>Your tools, master!</strong></h1>
 <% end %>
-
+<br><br>
 <div class="row small-up-1 medium-up-2 large-up-4" data-equalizer>
 <% @tools.each do |tool| %>
   <% unless tool.has_parent_tool? %> <!-- check to see if this is an accessory of another tool -->
 
     <div class="column">
-      <ul class="toolcard">
-        <li class="title" data-equalizer-watch><%= tool.description %></li>
+      <ul class="toolcard radius">
+        <div class="sign">
+          <h1><%= tool.kind %></h1>
+        </div>
+        <li class="title" data-equalizer-watch>
+          <%= tool.description %>
+          <% if tool.has_accessories? %><span class="badge has-tip right" data-tooltip data-disable-hover="false" tabindex="3" title="This tool has accessories.">A</span><%end%>
+        </li>
         <% if tool.nickname? %>
           <li class="price"><%= tool.nickname %></li>
         <% end %>
-        <li class="description"><span style="text-transform: capitalize;"><%= tool.brand %></span>  |  <%= tool.kind %>  |  Model #: <%= tool.model %></li>
+        <li class="description"><span style="text-transform: uppercase;"><%= tool.brand %></span>  ::  Model #: <%= tool.model %></li>
         <li class="bullet-item"><% if tool.pic? %><img src="<%=tool.pic%>" class="thumbnail" alt="Picture of <%=tool.description%>"><%end%></li>
-        <div class="bullet-item"><%= tool.borrower.name if tool.has_borrower?  %></div>
-        <div class="bullet-item">Purchase Location: <%=tool.purchase_location%></div>
-        <div class="bullet-item">Purchase Date:<%= tool.purchase_date %></div>
-        <div class="bullet-item">Notes:</div>
-        <div class="bullet-item"><%= tool.notes %></div>
+        <li class="bullet-item"><%= tool.borrower.name if tool.has_borrower?  %></li>
+        <li class="bullet-item">Purchase Location: <%=tool.purchase_location%></li>
+        <li class="bullet-item">Purchase Date:<%= tool.purchase_date %></li>
+        <li class="bullet-item"><strong>Notes:</strong><br><%= tool.notes %></li>
+      </ul>
     </div>
     <% end %>
-  <% end %>
-</div>
 
-<!--
-//    <% if tool.has_accessories? %>
-      <div class="panel-group" id="accordion" aria-multiselectable="true">
-        <h5>
-//          <a role="button" data-toggle="collapse" href="#<%=tool._id%>accessory_list">Show Accessories</a>
-        </h5>
-//        <div class="panel-collapse collapse" role="tabpanel" id="<%=tool._id%>accessory_list">
-          <div class="panel panel-default">
-//            <p><%= tool.accessories[0].description %> : <%= tool.accessories[0].brand %> : <%= tool.accessories[0].kind %>
-          </div>
+    <% if tool.has_accessories? %>
+      <% tool.accessories.each do |accessory| %>
+        <div class="column">
+          <ul class="toolcard radius">
+            <div class="sign">
+              <h1><%= accessory.kind %></h1>
+            </div>
+            <li class="title" data-equalizer-watch>
+              <%= accessory.description %>
+              <span class="badge has-tip right" data-tooltip data-disable-hover="false" tabindex="3" title="This tool is an accessory.">a</span>
+            </li>
+            <% if accessory.nickname? %>
+              <li class="price">
+                <%= accessory.nickname %>
+              </li>
+            <% end %>
+            <li class="description"><span style="text-transform: uppercase;"><%= accessory.brand %></span>  ::  Model #: <%= accessory.model %></li>
+            <li class="bullet-item"><% if accessory.pic? %><img src="<%=accessory.pic%>" class="thumbnail" alt="Picture of <%=accessory.description%>"><%end%></li>
+            <li class="bullet-item"><%= accessory.borrower.name if accessory.has_borrower?  %></li>
+            <li class="bullet-item">Purchase Location: <%=accessory.purchase_location%></li>
+            <li class="bullet-item">Purchase Date:<%= accessory.purchase_date %></li>
+            <li class="bullet-item"><strong>Notes:</strong><br><%= accessory.notes %></li>
+          </ul>
         </div>
-      </div>
-//    <% end %>
+      <% end %>
+    <% end %>
 
-//  <% end %>
-
--->
+<% end %>
+</div>

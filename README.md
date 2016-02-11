@@ -34,6 +34,7 @@ You may notice some missing functionality: for example, while you can see all yo
 3. Clone the repository
 4. `bundle install` from the `toolshed`
 5. Run MongoDB (I use all the defaults)
+6. Seed the db using the db_seed.js file (see file for instructions)
 6. `Rails s` and go visit http://localhost:3000/
 
 *Note:* If you want this to send emails or do FB auth you'll need to setup environment variables for:
@@ -41,4 +42,4 @@ You may notice some missing functionality: for example, while you can see all yo
   * "FB_APP_ID", and
   * "FB_SECRET"
 
-which feed in to `config/initializers/devise.rb`. It'll be really hard to authenticate without these. The `seed.js` file has two users in it but you won't be able to use them on your system.
+which feed in to Devise.
